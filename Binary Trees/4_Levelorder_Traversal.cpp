@@ -8,6 +8,7 @@ struct TreeNode {
      TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
      TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  };
+// This was my attempt there is a better way with queue
 int depth(TreeNode* root){
     if(!root) return 0;
     return max(depth(root->left),depth(root->right))+1;
