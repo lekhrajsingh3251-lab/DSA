@@ -45,6 +45,6 @@ struct TreeNode {
     root.left=&b;
     root.right=&c;
     c.left = &d;
-    return 0;
-}
+    cout << isSymmetric(&root);
+    }
     
