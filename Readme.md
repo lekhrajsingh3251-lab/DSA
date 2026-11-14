@@ -1,1 +1,1 @@
-These are my solutions to Striver A2Z DSA Sheet
+These are my solutions to Striver A2Z DSA Sheet.
