@@ -24,6 +24,26 @@ struct TreeNode {
         root->left = nullptr;
         root->right = dummy.right->right;
     }
+    // Space optimal O(1) code for flattening
+    void Optimal_flatten(TreeNode* root) {
+        TreeNode* curr = root;
+        while (curr != nullptr) {
+            if (curr->left != nullptr) {
+                // Find the rightmost node in the left subtree (pre-order predecessor of curr->right)
+                TreeNode* prev = curr->left;
+                while (prev->right != nullptr) {
+                    prev = prev->right;
+                }
+                // Wire the original right subtree to the end of the left subtree
+                prev->right = curr->right;
+                // Move the left subtree to the right and clear left
+                curr->right = curr->left;
+                curr->left = nullptr;
+            }
+            // Advance down the flattened right chain
+            curr = curr->right;
+        }
+    }
  int main(){
     TreeNode b(20);
     TreeNode c(30);
