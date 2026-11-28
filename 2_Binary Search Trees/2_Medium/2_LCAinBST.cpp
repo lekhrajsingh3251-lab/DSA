@@ -11,13 +11,9 @@ struct TreeNode {
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
         int a = p->val ,b = q->val;
         while (root) {
-            if (root->val > a && root->val > b) {
-                root = root->left;
-            } else if (root->val < a && root->val < b) {
-                root = root->right;
-            } else {
-                break;
-            }
+          if (root->val > a && root->val > b) root = root->left;
+          else if (root->val < a && root->val < b) root = root->right;
+          else break;
         }
         return root;
     }
